@@ -72,7 +72,7 @@ def image_pipelane(img):
     # Make heatmap of the boxes
     heatmap = np.zeros_like(img[:, :, 0]).astype(np.float)
     heatmap = add_heat(heatmap, boxes)
-    heatmap = apply_threshold(heatmap, 2)
+    heatmap = apply_threshold(heatmap, 48)
 
     labels = label(heatmap)
     draw_img = draw_labeled_bboxes(np.copy(img), labels)
